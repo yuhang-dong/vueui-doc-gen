@@ -1,3 +1,4 @@
+const path = require('path')
 /**
  * 用于两个绝对地址向相对地址的转化
  * @param from String

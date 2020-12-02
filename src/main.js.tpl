@@ -5,10 +5,6 @@ import 'normalize.css'
 import CodeBlock from '@/components/CodeBlock'
 import 'highlight.js/styles/github-gist.css'
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI)
-
 // 全局注册 CodeBlock
 Vue.component('code-block', CodeBlock);
 new Vue({

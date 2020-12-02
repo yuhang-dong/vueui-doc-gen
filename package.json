@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "doc-dev": "webpack serve --config ./build/wepack.config.js",
-    "doc:build": "webpack --config ./build/wepack.config.js"
+    "doc:dev": "node ./build/compile.js && webpack serve --config ./build/wepack.config.js",
+    "doc:build": "node ./build/compile.js && webpack --config ./build/wepack.config.js"
   },
   "dependencies": {
     "element-ui": "^2.14.1",

@@ -1,10 +1,8 @@
-const fs = require('fs')
-const path = require('path')
+const render = require('json-templater/string')
 
+template = `
+aha!
+{{importS}}
+`
 
-const mdPath = __dirname
-const routerPath = path.resolve(__dirname, '../../src/router/index.js')
-
-console.log(mdPath)
-console.log(routerPath)
-console.log(translatePath(routerPath, mdPath))
+console.log(render(template, {importS: 'sss'}))
