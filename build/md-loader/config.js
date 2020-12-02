@@ -1,6 +1,4 @@
 const Config = require('markdown-it-chain');
-const anchorPlugin = require('markdown-it-anchor');
-const slugify = require('transliteration').slugify;
 const containers = require('./containers');
 const overWriteFenceRule = require('./fence');
 
