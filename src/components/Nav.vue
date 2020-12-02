@@ -11,31 +11,31 @@
 import NavItem from './NavItem'
 export default {
   name: 'Nav',
-  // props: {
-  //   data: {
-  //     type: Array,
-  //     required: true
-  //   }
-  // },
-  data () {
-    return {
-      data: [
-        {
-          name: '基础模块',
-          items: [
-            {
-              name: '介绍',
-              url: '/intro'
-            },
-            {
-              name: '快速上手',
-              url: '/use'
-            }
-          ]
-        }
-      ]
+  props: {
+    data: {
+      type: Array,
+      required: true
     }
   },
+  // data () {
+  //   return {
+  //     data: [
+  //       {
+  //         name: '基础模块',
+  //         items: [
+  //           {
+  //             name: '介绍',
+  //             url: '/intro'
+  //           },
+  //           {
+  //             name: '快速上手',
+  //             url: '/use'
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // },
   methods: {
     onScroll () {
       // 视口距离
@@ -45,6 +45,9 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
   },
   components: {
     NavItem

@@ -1,28 +1,34 @@
 <template>
   <div id="app">
     <Title></Title>
-    <Nav></Nav>
-    <Components class="component"></Components>
+    <Nav :data="titles"></Nav>
+    <router-view class="component"></router-view>
   </div>
 </template>
 
 <script>
-import Title from './components/Title'
-import Nav from './components/Nav'
-import Components from './components/Components'
+import Title from '@/components/Title'
+import Nav from '@/components/Nav'
+
+import titles from './titles.json'
 
 export default {
   name: 'App',
   components: {
     Title,
-    Nav,
-    Components
+    Nav
+  },
+  data() {
+    return {
+      titles
+    }
   }
 }
 </script>
 <style>
 html, body {
   height: 100%;
+  min-width: 880px;
 }
 </style>
 <style lang="less" scoped>
@@ -34,6 +40,6 @@ html, body {
 }
 
 .component {
-  padding-left: @nav-width + 10px;
+  padding-left: @nav-width + 20px;
 }
 </style>

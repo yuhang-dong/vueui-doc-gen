@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+@import '../styles/base/variables';
 ul {
   padding: 0;
   margin: 0;
@@ -48,7 +49,7 @@ ul {
     box-sizing: border-box;
     &.activate {
       a {
-        color: green;
+        color: @base-font-color;
       }
     }
   }
@@ -61,7 +62,7 @@ ul {
     color: black;
 
     &:hover {
-      color: green;
+      color: @base-font-color;
     }
   }
 }
