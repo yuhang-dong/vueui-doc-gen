@@ -16,7 +16,7 @@ const webpackConfig = {
     vue: 'vue'
   },
   output: {
-    path: path.resolve(__dirname, '../public'),
+    path: path.resolve(__dirname, '../docs'),
     filename: '[name].[id].bundle.js'
   },
   devServer: {
