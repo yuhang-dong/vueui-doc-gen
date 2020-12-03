@@ -1,22 +1,14 @@
 const path = require('path')
-// const webpack = require('webpack')
+
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// const isProd = process.env.NODE_ENV === 'production'
 
 const webpackConfig = {
   entry: {
-    index: {
-      import: './src/main.js',
-      dependOn: 'vue',
-    },
-    vue: 'vue'
+    index: path.resolve(__dirname, './src/main.js'),
   },
   output: {
-    path: path.resolve(__dirname, '../docs'),
+    path: path.resolve(__dirname, './docs'),
     filename: '[name].[id].bundle.js'
   },
   devServer: {
@@ -25,11 +17,11 @@ const webpackConfig = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, './src'),
     },
     extensions: ['.js', '.vue', '.json'],
 
-    modules: ['node_modules']
+    modules: [path.resolve(__dirname, './node_modules'),'node_modules']
   },
   module: {
     rules: [
@@ -70,7 +62,7 @@ const webpackConfig = {
             }
           },
           {
-            loader: path.resolve(__dirname, './md-loader/index.js')
+            loader: path.resolve(__dirname, './build/md-loader/index.js')
           }
         ]
       },
@@ -81,10 +73,9 @@ const webpackConfig = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../index.html'),
+      template: path.resolve(__dirname, './index.html'),
       title: 'Docs'
     })
   ],

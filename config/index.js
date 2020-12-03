@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  output: path.resolve(__dirname, '../docs'),
   usage: {
     importStr: `import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
